@@ -6,29 +6,25 @@ import Row from './styledcomps/Row';
 import InputBox from './styledcomps/InputBox';
 
 class AddLine extends Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
 
         this.state = {
-            b: "",
             m: "",
+            b: ""
         };
 
-        this.changeM = this.changeM.bind(this);
-        this.changeB = this.changeB.bind(this);
+        this.handleChangeM = this.handleChangeM.bind(this);
+        this.handleChangeB = this.handleChangeB.bind(this);
         this.clickHandler = this.clickHandler.bind(this);
     }
 
-    changeM(event){
-        this.setState( () => ({
-            m: event.target.value
-        }));
+    handleChangeM(event){
+        this.setState({m: event.target.value});
     }
 
-    changeB(event){
-        this.setState( () => ({
-            b: event.target.value
-        }));
+    handleChangeB(event){
+        this.setState({b: event.target.value});
     }
 
     clickHandler(){
@@ -39,8 +35,8 @@ class AddLine extends Component{
         return(
             <Row>
                 <AddButton onClick={this.clickHandler}>Plot</AddButton>
-                <InputBox type="text" value={this.state.m} onChange={this.changeM}/>
-                <InputBox type="text" value={this.state.b} onChange={this.changeB}/>
+                <InputBox type="text" value={this.state.m} onChange={this.handleChangeM} />
+                <InputBox type="text" value={this.state.b} onChange={this.handleChangeB} />
             </Row>
         );
     }
@@ -49,6 +45,6 @@ class AddLine extends Component{
 
 AddLine.propTypes = {
     func: PropTypes.func
-}
+};
 
 export default AddLine;
