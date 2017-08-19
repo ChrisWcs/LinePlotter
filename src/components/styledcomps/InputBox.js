@@ -2,9 +2,10 @@ import glamorous from 'glamorous';
 
 const InputBox = glamorous.input({
     fontFamily: "Arial",
-    width: 40,
+    width: 30,
     border: 'black 1px solid',
-    padding: 20,
+    fontSize: 20,
+    padding: 10,
 });
 
 export default InputBox;

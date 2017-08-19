@@ -26,7 +26,8 @@ class App extends Component{
     addLine( m, b ){
         this.setState( () => ({
             ...this.state,
-            data: [ ...this.state.data, convertEqToPoints( Number(m), Number(b) ) ]
+            data: [ ...this.state.data, convertEqToPoints( Number(m), Number(b) ) ],
+            eqs: [...this.state.eqs, { m, b }]
         }));
     }
 
@@ -40,6 +41,7 @@ class App extends Component{
                 <Title />
                 <Plot data={this.state.data}/>
                 <AddLine func={this.addLine}/>
+                {this.state.eqs.map( (x, i) => <InputedLine key={i} m={x.m} b={x.b} func={()=>{}}/> )}
             </Column>
         );
     }

@@ -5,6 +5,7 @@ const Row = glamorous.div({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+    marginTop: 20
 });
 
 export default Row;
