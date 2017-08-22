@@ -1,6 +1,10 @@
 const initialState = () => ({
-    data: [],
-    eqs: [],
+    eqs: [
+            {
+                m: 5,
+                b: 0,
+            }
+         ],
 });
 
 export default initialState;
