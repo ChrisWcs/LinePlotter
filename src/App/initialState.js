@@ -1,4 +1,6 @@
 const initialState = () => ({
+    m: "",
+    b: "",
     eqs: [
             {
                 m: 5,
