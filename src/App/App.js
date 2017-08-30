@@ -7,12 +7,14 @@ import Column from './Column';
 
 import Title from './header/components/Title';
 import ConPlot from './plot/ConPlot';
+import ConInputLine from './lines/ConInputLine';
 
 const App = () => (
     <Provider store={createStore(mainReducer)}>
         <Column>
             <Title />
             <ConPlot/>
+            <ConInputLine />
         </Column>
     </Provider>
 );

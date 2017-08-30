@@ -18,6 +18,7 @@ InputLine.propTypes = {
     bVal: PropTypes.string,
     mChange: PropTypes.func,
     bChange: PropTypes.func,
+    plotLine: PropTypes.func,
 };
 
 export default InputLine;

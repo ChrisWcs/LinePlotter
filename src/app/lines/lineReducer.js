@@ -4,7 +4,7 @@ const lineReducer = (state, action) => {
     switch(action.type){
         case ADD_EQ:
             return {
-                eqs: [...state.eqs, { m: state.m, b: state.b }],
+                eqs: [...state.eqs, { m: Number(state.m), b: Number(state.b) }],
             };
         case CHANGE_B:
             return {

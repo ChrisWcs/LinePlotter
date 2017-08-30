@@ -1,0 +1,1 @@
+import mainReducer from './mainReducer';

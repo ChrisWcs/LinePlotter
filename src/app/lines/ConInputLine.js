@@ -10,13 +10,13 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     mChange: (event) => {
-        dispatch(createChangeM(event.target.value));
+        () => dispatch(createChangeM(event.target.value));
     },
     bChange: (event) => {
-        dispatch(createChangeB(event.target.value));
+        () => dispatch(createChangeB(event.target.value));
     },
     plotLine: () => {
-        dispatch(createAddEq());
+        () => dispatch(createAddEq());
     },
 });
 
