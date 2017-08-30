@@ -5,17 +5,17 @@ import SButton from '../styledcomps/SButton';
 import SInput from '../styledcomps/SInput';
 import Row from '../styledcomps/Row';
 
-const InputLine = ({ mVal, bVal, mChange, bChange, plotLine }) => (
+const InputLine = ({ m, b, mChange, bChange, plotLine }) => (
     <Row>
         <SButton onClick={plotLine}>Plot Line</SButton>
-        <SInput type="text"  value={mVal} onChange={mChange}/>
-        <SInput type="text" value={bVal} onChange={bChange}/>
+        <SInput type="text"  value={m} onChange={mChange}/>
+        <SInput type="text" value={b} onChange={bChange}/>
     </Row>
 );
 
 InputLine.propTypes = {
-    mVal: PropTypes.string,
-    bVal: PropTypes.string,
+    m: PropTypes.string,
+    b: PropTypes.string,
     mChange: PropTypes.func,
     bChange: PropTypes.func,
     plotLine: PropTypes.func,

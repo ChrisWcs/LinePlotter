@@ -4,19 +4,19 @@ import InputLine from './components/InputLine';
 import { createAddEq, createChangeB, createChangeM } from './actionCreator';
 
 const mapStateToProps = state => ({
-    mVal: state.mVal,
-    bVal: state.bVal,
+    m: state.m,
+    b: state.b,
 });
 
 const mapDispatchToProps = dispatch => ({
-    mChange: (event) => {
-        () => dispatch(createChangeM(event.target.value));
+    mChange: (event) => { 
+        dispatch(createChangeM(event.target.value));
     },
     bChange: (event) => {
-        () => dispatch(createChangeB(event.target.value));
+        dispatch(createChangeB(event.target.value));
     },
     plotLine: () => {
-        () => dispatch(createAddEq());
+        dispatch(createAddEq());
     },
 });
 
