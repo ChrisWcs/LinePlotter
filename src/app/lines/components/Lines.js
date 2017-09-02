@@ -21,6 +21,6 @@ const Lines = ({ eqs, createDel }) => (
 Lines.propTypes = {
     eqs: PropTypes.array,
     createDel: PropTypes.func,
-}
+};
 
 export default Lines;

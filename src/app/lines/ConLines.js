@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { createDelete } from './actionCreator';
 
 import Lines from './components/Lines';
 
@@ -8,7 +9,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     createDel: (index) => () => {
-        dispatch();
+        dispatch(createDelete(index));
     }
 });
 
