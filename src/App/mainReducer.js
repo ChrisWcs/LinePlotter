@@ -1,5 +1,5 @@
 import initialState from './initialState';
-import { CHANGE_B, CHANGE_M, ADD_EQ } from './actions/actions';
+import { CHANGE_B, CHANGE_M, ADD_EQ, DELETE } from './actions/actions';
 
 import lineReducer from './lines/lineReducer';
 
@@ -20,6 +20,11 @@ const mainReducer = ( state = initialState(), action ) => {
                 ...state,
                 ...lineReducer(state, action),
             };
+        case DELETE:
+            return {
+                ...state,
+                ...lineReducer(state, action)
+            }
         default:
             return state;
     }

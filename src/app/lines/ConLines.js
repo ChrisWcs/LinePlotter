@@ -13,6 +13,6 @@ const mapDispatchToProps = dispatch => ({
     }
 });
 
-const ConLines = connect( mapStateToProps, mapDispatchToProps )(Lines);
+const ConLines = connect( mapStateToProps, mapDispatchToProps )( Lines );
 
 export default ConLines;

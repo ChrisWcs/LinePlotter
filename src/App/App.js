@@ -16,7 +16,7 @@ const App = () => (
             <Title />
             <ConPlot/>
             <ConInputLine />
-            <ConLines/>
+            <ConLines />
         </Column>
     </Provider>
 );

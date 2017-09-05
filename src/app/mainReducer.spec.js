@@ -1,4 +1,4 @@
-import { createAddEq, createChangeB, createChangeM } from './lines/actionCreator';
+import { createAddEq, createChangeB, createChangeM, createDelete } from './lines/actionCreator';
 
 import mainReducer from './mainReducer';
 import initialState from './initialState';
@@ -42,6 +42,21 @@ describe('mainReducer tests', () => {
     let actual = mainReducer(initialState(), createChangeM("5"));
     actual = mainReducer( actual, createChangeB("3"));
     actual = mainReducer( actual, createAddEq());
+
+    expect(actual).toEqual(expected);
+  });
+
+  it('testing deleting Eq', () => {
+    
+    let expected = initialState();
+    expected.m = "5";
+    expected.b = "3";
+    expected.eqs = [];
+
+    let actual = mainReducer(initialState(), createChangeM("5"));
+    actual = mainReducer( actual, createChangeB("3"));
+    actual = mainReducer( actual, createAddEq());
+    actual = mainReducer( actual, createDelete(0));
 
     expect(actual).toEqual(expected);
   });

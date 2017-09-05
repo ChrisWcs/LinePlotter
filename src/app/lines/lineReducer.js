@@ -1,4 +1,4 @@
-import { ADD_EQ, CHANGE_B, CHANGE_M } from '../actions/actions';
+import { ADD_EQ, CHANGE_B, CHANGE_M, DELETE } from '../actions/actions';
 
 const lineReducer = (state, action) => {
     switch(action.type){
@@ -15,6 +15,11 @@ const lineReducer = (state, action) => {
             return {
                 ...state,
                 m: action.m,
+            };
+        case DELETE:
+            return {
+                ...state,
+                eqs: [ ...state.eqs.slice(0, action.index), ...state.eqs.slice(action.index + 1, state.eqs.length)]
             };
         default:
             return state;
