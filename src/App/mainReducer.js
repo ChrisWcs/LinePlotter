@@ -1,7 +1,8 @@
 import initialState from './initialState';
-import { CHANGE_B, CHANGE_M, ADD_EQ, DELETE } from './actions/actions';
+import { CHANGE_B, CHANGE_M, ADD_EQ, DELETE, CLEAR } from './actions/actions';
 
 import lineReducer from './lines/lineReducer';
+import clearReducer from './clear/clearReducer';
 
 const mainReducer = ( state = initialState(), action ) => {
     switch( action.type ){
@@ -24,7 +25,12 @@ const mainReducer = ( state = initialState(), action ) => {
             return {
                 ...state,
                 ...lineReducer(state, action)
-            }
+            };
+        case CLEAR:
+            return {
+                ...state,
+                ...clearReducer(state, action)
+            };
         default:
             return state;
     }
