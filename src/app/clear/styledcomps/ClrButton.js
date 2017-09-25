@@ -6,6 +6,9 @@ const ClrButton = glamorous.button({
     fontSize: 25,
     fontFamily: "Arial",
     fontSpacing: 2,
+    background: "white",
+    marginTop: 30,
+    cursor: "pointer",
 });
 
 export default ClrButton;
