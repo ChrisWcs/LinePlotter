@@ -3,14 +3,22 @@ import PropTypes from 'prop-types';
 
 import SButton from '../styledcomps/SButton';
 import SInput from '../styledcomps/SInput';
+import SLabel from '../styledcomps/SLabel';
 import Row from '../styledcomps/Row';
+import Column from '../styledcomps/Column';
 
 const InputLine = ({ m, b, mChange, bChange, plotLine }) => (
-    <Row>
+    <Column>
         <SButton onClick={plotLine}>Plot Line</SButton>
-        <SInput type="text"  value={m} onChange={mChange}/>
-        <SInput type="text" value={b} onChange={bChange}/>
-    </Row>
+        <Row>
+            <SLabel> M :</SLabel>
+            <SInput type="text"  value={m} onChange={mChange}/>
+        </Row>
+        <Row>
+            <SLabel> B :</SLabel>
+            <SInput type="text" value={b} onChange={bChange}/>
+        </Row>
+    </Column>
 );
 
 InputLine.propTypes = {
